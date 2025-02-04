@@ -12,9 +12,9 @@
     </header>
     <nav>
         <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="login.php">Iniciar Sesión</a></li>
-            <li><a href="registro.php">Registrarse</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="registro.php">Register</a></li>
         </ul>
 </body>
 </html>
