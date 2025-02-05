@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <img src="logo/logo1.webp" alt="">
+        <a href="index.php"><img src="logo/logo1.webp" alt="logo1"></a>
         <h1>Login</h1>
     </header>
     <form action="" autocomplete="off" method="post">
@@ -23,7 +23,7 @@
 
 </body>
 <footer>
-    <p>copyright_2025</p>a
+    <p>copyright_2025</p>
 </footer>
 
 </html>
