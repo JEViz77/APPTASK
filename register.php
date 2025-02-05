@@ -1,4 +1,5 @@
 <?php
+include("conexiondb.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $username = $_POST["username"];
@@ -7,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname=$_POST["lastname"];
 
     // Incluir archivo de conexión
-    include("conexiondb.php");
+    
 
     try {
         // Verificar si el usuario ya existe en la base de datos
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stm->execute();
 
             // Redirigir al usuario a una página de éxito o login
-            header("Location: login.php");
+            header("Location: main.php");
             exit();
         }
     } catch (Exception $e) {
@@ -56,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <header>
-        <a href="index.php"><img src="img/logo1.webp" alt="logo"></a>
+        <a href="index.php"><img src="img/logo1.webp" alt="logo1"></a>
         <h1>Registro</h1>
 
     </header>
