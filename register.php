@@ -52,12 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
     <header>
-        <a href="index.php"><img src="img/logo1.webp" alt="logo1"></a>
+        <a href="index.php"><img src="logo/logo1.webp" alt="logo1"></a>
         <h1>Registro</h1>
 
     </header>
