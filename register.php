@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stm->execute();
 
             // Redirigir al usuario a una página de éxito o login
-            header("Location: main.php");
+            header("Location: login.php");
             exit();
         }
     } catch (Exception $e) {
