@@ -22,7 +22,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         // Si el usuario existe y la contraseña es correcta
         if ($row && password_verify($password, $row["password"])) {
             $_SESSION["username"] = $username;  // Guardar el nombre de usuario en la sesión
-
+            $_SESSION["Usuarios_id"] = $row["Usuarios_id"]; // Guardar el ID de usuario en la sesión
             // Redirigir al usuario a la página de tareas
             header("Location: main.php");
             exit(); // Asegurarse de que no se ejecute más código después de la redirección

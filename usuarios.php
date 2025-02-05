@@ -4,14 +4,21 @@ include("conexiondb.php");
 if (isset($_POST["name"])) {
   $name = $_POST["name"];
   $lastname = $_POST["lastname"];
-  $sql="UPDATE usuarios SET name='$name', lastname='$lastname' WHERE Usuarios_id=$$_POST[Usuarios_id]";
-$conexion->query($sql);header("Location:usuarios.php");
-exit();
+  $sql = "UPDATE usuarios SET name='$name', lastname='$lastname' WHERE Usuarios_id=$_POST[Usuarios_id]";
+  $conexion->query($sql);
+  header("Location:usuarios.php");
+  exit();
 
 }
-$sql = "SELECT Usuarios_id,name,lastname FROM usuarios where Usuarios_id=2";
-$result = $conexion->query($sql);
-$row = $result->fetch(PDO::FETCH_ASSOC);
+if(! isset($_SESSION["Usuarios_id"])){
+  header("Location:login.php");
+}
+else{
+  $sql = "SELECT Usuarios_id,name,lastname FROM usuarios where Usuarios_id=".$_SESSION["Usuarios_id"].";";
+  $result = $conexion->query($sql);
+  $row = $result->fetch(PDO::FETCH_ASSOC);
+}
+
 
 
 
