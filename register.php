@@ -13,10 +13,20 @@
         <h1>APPTASK</h1>
     </header>
     <form action="" method="post">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" required placeholder="Nombre">
-        <label for="Apellidos"></label>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" required placeholder="Nombre">
+        <label for="lastname">Apellidos</label>
+        <input type="text" name="lastname" id="lastname" required placeholder="Apellidos">
+        <label for="username">Usuario</label>
+        <input type="text" name="username" id="username" required placeholder="Usuario">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" required placeholder=" Contraseña">
+        <input type="submit" value="Registrase">
+        <footer>
+            <p>copyright_2025</p>a
+        </footer>
     </form>
+
 </body>
 
 </html>
