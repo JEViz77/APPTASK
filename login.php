@@ -18,9 +18,9 @@ if (isset($_POST["username"])) {
 
        
         $row = $stm->fetch(PDO::FETCH_ASSOC);
-
         
-        if ($row && password_verify($password, $row["password"])) {
+        if (password_verify($password,$row["password"])) {
+         
             $_SESSION["username"] = $username;  // Guardar el nombre de usuario en la sesión
 
            
