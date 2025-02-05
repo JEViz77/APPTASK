@@ -132,11 +132,13 @@ th, td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    
 }
 
 th {
     background-color: #333;
     color: #fff;
+
 }
 
 tbody tr:nth-child(even) {
@@ -159,4 +161,8 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+thead th{
+    text-align: center;
 }

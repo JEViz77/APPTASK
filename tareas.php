@@ -24,6 +24,8 @@ include("conexiondb.php");
         <td>En proceso</td>
 
       </tr>
+      <button>Crear</button>
+      <button>Ver</button>
       <button>Editar</button>
       <button>Eliminar</button>
       <!-- Puedes añadir más filas aquí -->
