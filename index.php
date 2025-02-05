@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -17,4 +18,7 @@
             <li><a href="registro.php">Register</a></li>
         </ul>
 </body>
+<footer>
+    <p>copyright_2025</p>
+</footer>
 </html>
