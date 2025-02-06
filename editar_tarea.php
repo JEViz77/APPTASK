@@ -6,7 +6,7 @@ if(isset($_SESSION["Usuarios_id"])){
   $Usuarios_id = $_SESSION['Usuarios_id']; // Asumiendo que user_id se almacena en la sesión al iniciar sesión
 
 }else{
-  header("Location: tareas.php");
+  header("Location: login.php");
   exit();
 }
 

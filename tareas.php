@@ -14,6 +14,7 @@ $result = $conexion->query($sql);
 ?>
 <section id="tareas">
   <h3>Tareas</h3>
+ 
   <table>
     <thead>
       <tr>
@@ -22,6 +23,7 @@ $result = $conexion->query($sql);
         <th>Descripción</th>
         <th>Fecha creacion</th>
         <th>Estado</th>
+        <th>Operaciones</th>
       </tr>
     </thead>
     <tbody>
@@ -40,12 +42,13 @@ $result = $conexion->query($sql);
         echo "<td>
                     <a href='editar_tarea.php?tareas_id=" . $fila['tareas_id'] . "'>Editar</a> |
                     <a href='eliminar_tarea.php?tareas_id=" . $fila['tareas_id'] . "'>Eliminar</a> | 
-                    <a href='anadir_tarea?tareas_id=" . $fila['tareas_id'] . "'>Añadir</a>| 
-                    <a href='ver_tareas?tareas_id=" . $fila['tareas_id'] . "'>Ver</a></td>";
+                    
+                    </td>";
         echo "</tr>";
       }
       ?>
     </tbody>
   </table>
 </section>
+<h3><a href="añadir_tareas.php">Añadir</a></h3>
 <?php include("partials/footer.php"); ?>
