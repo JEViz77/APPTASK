@@ -1,6 +1,14 @@
 <?php include("partials/cabecera.php");
 include("conexiondb.php");
-$sql = "SELECT * FROM tareas order by tareas_id desc";
+session_start();
+if(isset($_SESSION["Usuarios_id"])){
+  $Usuarios_id = $_SESSION['Usuarios_id']; // Asumiendo que user_id se almacena en la sesión al iniciar sesión
+
+}else{
+  header("Location: tareas.php");
+  exit();
+}
+$sql = "SELECT * FROM tareas where Usuarios_id=".$Usuarios_id." order by tareas_id desc";
 $result = $conexion->query($sql);
 
 ?>
