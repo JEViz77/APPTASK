@@ -1,5 +1,6 @@
 <?php
 include("conexiondb.php");
+session_start();
 
 if (isset($_GET['tareas_id'])) {
     $tareas_id = $_GET['tareas_id'];
