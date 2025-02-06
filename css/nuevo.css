@@ -218,6 +218,7 @@ footer {
 footer p {
     margin: 0;
     font-size: 1em;
+    color: white;
 }
 
 /* Sección de tareas */
@@ -297,4 +298,10 @@ form a:hover {
     table th, table td {
         padding: 8px;
     }
+}
+#presentacion h1{
+    text-align: center;
+}
+#presentacion p {
+    color: #333;
 }
