@@ -1,5 +1,4 @@
 <?php
-session_start();
 include("partials/cabecera.php");
 include("conexiondb.php");
 if(isset($_SESSION["Usuarios_id"])){

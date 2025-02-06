@@ -1,6 +1,5 @@
 <?php include("partials/cabecera.php");
 include("conexiondb.php");
-session_start();
 if(isset($_SESSION["Usuarios_id"])){
   $Usuarios_id = $_SESSION['Usuarios_id']; // Asumiendo que user_id se almacena en la sesión al iniciar sesión
 

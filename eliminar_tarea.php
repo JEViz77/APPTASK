@@ -1,5 +1,4 @@
 <?php
-session_start();
 include("conexiondb.php");
 
 if (isset($_GET['tareas_id'])) {
