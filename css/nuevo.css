@@ -306,8 +306,14 @@ form a:hover {
 }
 #presentacion p {
     color: #333;
+   
 }
 #welcome p{
     color: white;
 
+}
+
+#presentacion{ 
+    width: 80%;
+    margin: auto;
 }
