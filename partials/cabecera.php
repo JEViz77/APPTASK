@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barra Lateral</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nuevo.css">
 
 </head>
 
@@ -19,4 +19,4 @@
                 <li><a href="usuarios.php">Usuarios</a></li>
             </ul>
         </aside>
-    </main>
+   
