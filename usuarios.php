@@ -1,6 +1,7 @@
 <?php
 include("partials/cabecera.php");
 include("conexiondb.php");
+session_start();
 if (isset($_POST["name"])) {
   $name = $_POST["name"];
   $lastname = $_POST["lastname"];

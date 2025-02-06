@@ -1,0 +1,300 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Menú lateral */
+aside {
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 100;
+}
+
+aside h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 10px 0;
+}
+
+aside ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px;
+}
+
+aside ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Contenido principal */
+main {
+    margin-left: 240px; /* Para que el contenido no se superponga al menú lateral */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Formulario común */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    width: 90%;
+    max-width: 400px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="submit"],
+form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus {
+    border-color: #333;
+    outline: none;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #575757;
+}
+
+/* Mensaje de error */
+p {
+    color: red;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Tabla de tareas */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+table tr:hover {
+    background-color: #e9e9e9;
+}
+
+table td a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Sección de tareas */
+section#tareas {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de editar tarea */
+section#editar_tarea, section#anadir_tarea {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+section#editar_tarea h3, section#anadir_tarea h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Edición de datos de usuario */
+section#editar_datos_usuario {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Links en los formularios */
+form a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Ajuste en la barra lateral */
+    aside {
+        width: 100%;
+        position: static;
+        height: auto;
+        padding-top: 20px;
+    }
+
+    /* El contenido debe ocupar todo el ancho */
+    main {
+        margin-left: 0;
+    }
+
+    /* Los elementos de navegación se alinean verticalmente */
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Se asegura que los formularios y tablas no se superpongan */
+    form, table {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Se reduce el padding en las tablas */
+    table th, table td {
+        padding: 8px;
+    }
+}
