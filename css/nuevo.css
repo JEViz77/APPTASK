@@ -300,20 +300,3 @@ form a:hover {
     table th, table td {
         padding: 8px;
     }
-}
-#presentacion h1{
-    text-align: center;
-}
-#presentacion p {
-    color: #333;
-   
-}
-#welcome p{
-    color: white;
-
-}
-
-#presentacion{ 
-    width: 80%;
-    margin: auto;
-}
