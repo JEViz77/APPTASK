@@ -299,35 +299,3 @@ form a:hover {
 #form_login{
     height: 70.5vh;
 }
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    /* Ajuste en la barra lateral */
-    aside {
-        width: 100%;
-        position: static;
-        height: auto;
-        padding-top: 20px;
-    }
-
-    /* El contenido debe ocupar todo el ancho */
-    main {
-        margin-left: 0;
-    }
-
-    /* Los elementos de navegación se alinean verticalmente */
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    /* Se asegura que los formularios y tablas no se superpongan */
-    form, table {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    /* Se reduce el padding en las tablas */
-    table th, table td {
-        padding: 8px;
-    }
-}
