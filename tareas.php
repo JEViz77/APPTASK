@@ -49,5 +49,5 @@ $result = $conexion->query($sql);
     </tbody>
   </table>
 </section>
-<h3><a href="añadir_tareas.php">Añadir</a></h3>
+<button id="añadir" type="submit"><a href="añadir_tareas.php">Añadir</a></button>
 <?php include("partials/footer.php"); ?>
