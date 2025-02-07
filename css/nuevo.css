@@ -212,7 +212,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 15px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -269,6 +269,36 @@ form a:hover {
     text-decoration: underline;
 }
 
+#presentacion h1{
+    text-align: center;
+}
+#presentacion p {
+    color: #333;
+   
+}
+#welcome p{
+    color: white;
+
+}
+
+#presentacion{ 
+    width: 80%;
+    margin: auto;
+    height: 72vh;
+
+}
+#index_footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+#form_login{
+    height: 70.5vh;
+}
 /* Estilos responsivos */
 @media (max-width: 768px) {
     /* Ajuste en la barra lateral */
@@ -300,3 +330,4 @@ form a:hover {
     table th, table td {
         padding: 8px;
     }
+}

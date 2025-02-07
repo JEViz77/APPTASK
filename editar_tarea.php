@@ -44,7 +44,10 @@ if (isset($_GET['tareas_id'])) {
     <label for="fecha_creacion">Fecha de Creación:</label>
     <input type="date" id="fecha_creacion" name="fecha_creacion" value="<?php echo $fila['fecha_creacion']; ?>" required>
     <label for="estado">Estado:</label>
-    <input type="text" id="estado" name="estado" value="<?php echo $fila['estado']; ?>" required>
+    <select name="estado" id="estado" required>
+      <option value=1 <?php if($fila['estado'] == 1) echo "selected"; ?>>En proceso</option>
+      <option value=0 <?php if($fila['estado'] == 0) echo "selected"; ?>>Finalizado</option>
+    </select>
     <button type="submit">Guardar Cambios</button>
   </form>
 </section>

@@ -31,6 +31,7 @@ if (isset($_SESSION["username"])) {
             <ul>
                 <li><a href="tareas.php">Tareas</a></li>
                 <li><a href="usuarios.php">Usuarios</a></li>
+                <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
             </ul>
         </aside>
    

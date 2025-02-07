@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
     <link rel="stylesheet" href="css/nuevo.css">
-    <style>
-        .center-text {
-            text-align: center;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -33,7 +29,7 @@ En resumen, nuestra plataforma no solo busca ayudar a los usuarios a cumplir con
 
 </p>
     </div>
-    <footer>
+    <footer id="index_footer">
         <p>copyright_2025</p>
     </footer>
 </body>
