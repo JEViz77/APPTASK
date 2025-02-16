@@ -4,30 +4,30 @@ include("conexiondb.php");
 
 
 
-if (!isset($_SESSION["Usuarios_id"])) {
+if (!isset($_SESSION["Usuarios_id"])) { // Si no hay sesión activa
     header("Location: login.php");
     exit();
 }
 
-if (isset($_GET['tareas_id'])) {
-    $tareas_id = $_GET['tareas_id'];
-    $Usuarios_id = $_SESSION['Usuarios_id'];
+if (isset($_GET['tareas_id'])) { // Si se recibe una id de tarea 
+    $tareas_id = $_GET['tareas_id']; // Guardar id de tarea en variable
+    $Usuarios_id = $_SESSION['Usuarios_id']; // Guardar id de usuario en variable
 
     // Obtener tarea para editar
     $sql = "SELECT * FROM tareas WHERE tareas_id = :tareas_id AND Usuarios_id = :Usuarios_id";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bindParam(':tareas_id', $tareas_id, PDO::PARAM_INT);
+    $stmt = $conexion->prepare($sql); // Preparar consulta
+    $stmt->bindParam(':tareas_id', $tareas_id, PDO::PARAM_INT); // Vincular parametros
     $stmt->bindParam(':Usuarios_id', $Usuarios_id, PDO::PARAM_INT);
-    $stmt->execute();
-    $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->execute(); // Ejecutar consulta
+    $fila = $stmt->fetch(PDO::FETCH_ASSOC); // Guardar resultado en un array asociativo
 
-    if (!$fila) {
+    if (!$fila) { // Si no se encuentra la tarea
         // Redirigir si no se encuentra la tarea
         header("Location: tareas.php");
         exit();
     }
-} else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $tareas_id = $_POST['tareas_id'];
+} else if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Si se envio el formulario
+    $tareas_id = $_POST['tareas_id']; // Guardar id tarea en variable
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
     $fecha_creacion = $_POST['fecha_creacion'];
@@ -36,16 +36,16 @@ if (isset($_GET['tareas_id'])) {
     // Actualizar tarea
     $sql = "UPDATE tareas SET titulo = :titulo, descripcion = :descripcion, 
             fecha_creacion = :fecha_creacion, estado = :estado WHERE tareas_id = :tareas_id AND Usuarios_id = :Usuarios_id";
-    $stmt = $conexion->prepare($sql);
+    $stmt = $conexion->prepare($sql); 
 
-    $stmt->bindParam(':titulo', $titulo);
+    $stmt->bindParam(':titulo', $titulo); // Vincular parametros
     $stmt->bindParam(':descripcion', $descripcion);
     $stmt->bindParam(':fecha_creacion', $fecha_creacion);
     $stmt->bindParam(':estado', $estado, PDO::PARAM_INT);
     $stmt->bindParam(':tareas_id', $tareas_id, PDO::PARAM_INT);
     $stmt->bindParam(':Usuarios_id', $_SESSION['Usuarios_id'], PDO::PARAM_INT);
 
-    if ($stmt->execute()) {
+    if ($stmt->execute()) { // Si la consulta se ejecuta correctamente
         header("Location: tareas.php");
         exit();
     }

@@ -3,27 +3,27 @@
 include("conexiondb.php");
 session_start();
 
-if (isset($_POST["username"])) {
+if (isset($_POST["username"])) { //Si se ha enviado el formulario
 
     $sql = "SELECT * FROM usuarios WHERE username=:username";
-    $stm = $conexion->prepare($sql);
-    $stm->bindParam(":username", $_POST["username"]);
-    $stm->execute();
-    $username = $stm->fetch();
-    if ($username) {
-        if (password_verify($_POST["password"], $username["password"])) {
+    $stm = $conexion->prepare($sql); //Preparamos consulta
+    $stm->bindParam(":username", $_POST["username"]); //Sustituimos los parametros
+    $stm->execute(); //Ejecutamos la consulta
+    $username = $stm->fetch(); //Obtenemos el resultado de la consulta
+    if ($username) { //Si existe el usuario
+        if (password_verify($_POST["password"], $username["password"])) { //Si la contraseña es correcta
 
-            $_SESSION["Usuarios_id"] = $username["Usuarios_id"];
-            $_SESSION["username"] = $username["username"];
+            $_SESSION["Usuarios_id"] = $username["Usuarios_id"]; //Guardamos el id del usuario en la sesion
+            $_SESSION["username"] = $username["username"]; //Guardamos el username del usuario en la sesion
             header("Location: main.php");
-            exit();
-        } else {
-            echo "Contraseña incorrecta";
-            exit();
+            exit(); //Redirigimos a la pag ppal
+        } else { //Si la contraseña no es correcta
+            echo "Contraseña incorrecta"; //Mostramos sms de error
+            exit(); //Salimos del script
         }
-    } else {
+    } else { //Si no existe el usuario
         echo "username no encontrado";
-        exit();
+        exit(); 
     }
 }
 ?>

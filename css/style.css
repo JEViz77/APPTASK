@@ -2,14 +2,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /*para que el padding y margin no afecten el tamaño del elemento */
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #1A1A1A; /* Fondo gris oscuro */
   color: #BDC3C7; /* Texto gris claro */
-  line-height: 1.6;
+  line-height: 1.6; /* Espaciado entre lineas*/
   padding: 20px;
   margin: 0;
   overflow-x: hidden; /* Elimina el scroll horizontal */
@@ -25,7 +25,7 @@ header {
   margin-bottom: 40px;
   background-color: #34495E; /* Gris oscuro */
   padding: 20px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /*Sombra*/
   border-radius: 10px;
 }
 
@@ -62,7 +62,7 @@ nav a {
   font-size: 1.2rem;
   padding: 12px 20px;
   border-radius: 25px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Efecto de transicion*/
   font-weight: 500;
 }
 
@@ -149,9 +149,9 @@ form button:hover {
 /* Tabla de Tareas */
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse; /* Elimina el espacio entre las celdas*/
   margin-top: 40px;
-  table-layout: fixed;
+  table-layout: fixed; /* Fija el ancho de las columnas*/
 }
 
 table th,
@@ -159,7 +159,7 @@ table td {
   padding: 16px;
   border: 1px solid #BDC3C7;
   text-align: left;
-  word-wrap: break-word;
+  word-wrap: break-word; /* Rompe la palabra si es muy larga*/
 }
 
 table th {
@@ -290,7 +290,7 @@ section h2 {
 
   nav ul {
     flex-direction: column;
-    gap: 15px;
+    gap: 15px; /* Espacio entre elementos*/
   }
 
   #presentacion {
@@ -308,7 +308,7 @@ section h2 {
 
   aside {
     width: 100%;
-    float: none;
+    float: none; 
     margin-right: 0;
     margin-top: 40px;
   }

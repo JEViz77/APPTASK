@@ -4,30 +4,30 @@ include("conexiondb.php");
 
 
 
-if (!isset($_SESSION["Usuarios_id"])) {
+if (!isset($_SESSION["Usuarios_id"])) { // Si no existe la variable de sesion Usuarios_id...
     header("Location: login.php");
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = $_POST['titulo'];
-    $descripcion = $_POST['descripcion'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Si se ha enviado el formulario...
+    $titulo = $_POST['titulo']; // Guardamos los valores de los campos del formulario en variables
+    $descripcion = $_POST['descripcion']; //
     $fecha_creacion = $_POST['fecha_creacion'];
     $estado = $_POST['estado'];
-    $Usuarios_id = $_SESSION['Usuarios_id'];
+    $Usuarios_id = $_SESSION['Usuarios_id']; // Guardamos el valor de la variable de sesion Usuarios_id en la variable $Usuarios_id 
 
     // Usar consultas preparadas para evitar inyecciones SQL
     $sql = "INSERT INTO tareas (titulo, descripcion, fecha_creacion, estado, Usuarios_id) 
             VALUES (:titulo, :descripcion, :fecha_creacion, :estado, :Usuarios_id)";
-    $stmt = $conexion->prepare($sql);
-
-    $stmt->bindParam(':titulo', $titulo);
+    $stmt = $conexion->prepare($sql); // Preparamos la consulta
+// Asignamos los valores de las variables a los parametros de la consulta
+    $stmt->bindParam(':titulo', $titulo); 
     $stmt->bindParam(':descripcion', $descripcion);
     $stmt->bindParam(':fecha_creacion', $fecha_creacion);
     $stmt->bindParam(':estado', $estado, PDO::PARAM_INT);
     $stmt->bindParam(':Usuarios_id', $Usuarios_id, PDO::PARAM_INT);
 
-    if ($stmt->execute()) {
+    if ($stmt->execute()) { // Si la consulta se ejecuta correctamente...
         header("Location: tareas.php");
         exit();
     }
@@ -52,4 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </form>
 </section>
 
-<?php include("partials/footer.php"); ?>
+<?php include("partials/footer.php"); ?> 

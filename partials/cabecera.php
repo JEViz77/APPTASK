@@ -1,7 +1,7 @@
 <?php   
 session_start();
-if (isset($_SESSION["username"])) {
-    $username = $_SESSION["username"];
+if (isset($_SESSION["username"])) { // Si existe la variable de sesion username... 
+    $username = $_SESSION["username"]; // Guardamos el valor de la variable de sesion en la variable $username
 }
 ?>
 <!DOCTYPE html>

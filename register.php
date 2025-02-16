@@ -1,23 +1,23 @@
 <?php
 include("conexiondb.php");
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") { //Verificar si se ha enviado el formulario
     // Obtener los datos del formulario
     $username = $_POST["username"];
     $password = $_POST["password"];
     $name = $_POST["name"];
     $lastname=$_POST["lastname"];
 
-    // Incluir archivo de conexión
+  
     
 
-    try {
+    try { 
         // Verificar si el usuario ya existe en la base de datos
         $sql = "SELECT * FROM usuarios WHERE username = :username";
-        $stm = $conexion->prepare($sql);
-        $stm->bindParam(":username", $username);
+        $stm = $conexion->prepare($sql); 
+        $stm->bindParam(":username", $username); // Reemplazar :username con el valor de $username
         $stm->execute();
         
-        if ($stm->rowCount() > 0) {
+        if ($stm->rowCount() > 0) { // Si el usuario ya existe
             $error = "El nombre de usuario ya está en uso.";
         } else {
             // Si el usuario no existe, procesar el registro
@@ -37,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: login.php");
             exit();
         }
-    } catch (Exception $e) {
+    } catch (Exception $e) { // se ejecuta si hay un error en el bloque try
         // Manejo de errores
-        $error = "Error: " . $e->getMessage();
+        $error = "Error: " . $e->getMessage(); //Mensaje de error 
     }
 }
 ?>
