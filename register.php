@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="css/nuevo.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </body>
 <footer>
-    <p>Copyrigth 2020</p>
+    <p>&copy; 2025 - Todos los derechos reservados</p>
 </footer>
 
 </html>

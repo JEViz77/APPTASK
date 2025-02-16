@@ -35,7 +35,7 @@ if (isset($_POST["username"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/nuevo.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -55,7 +55,7 @@ if (isset($_POST["username"])) {
 
 </body>
 <footer>
-    <p>copyright_2025</p>
+    <p>&copy; 2025 - Todos los derechos reservados</p>
 </footer>
 
 </html>

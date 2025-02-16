@@ -1,8 +1,9 @@
-</main>
 
+</main>
 <footer>
-    <p>Copyright_2025</p>
+    <p>
+        &copy; 2025 - Todos los derechos reservados
+    </p>
 </footer>
 </body>
-
 </html>

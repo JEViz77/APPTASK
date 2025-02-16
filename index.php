@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
-    <link rel="stylesheet" href="css/nuevo.css">
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
@@ -30,7 +30,9 @@ En resumen, nuestra plataforma no solo busca ayudar a los usuarios a cumplir con
 </p>
     </div>
     <footer id="index_footer">
-        <p>copyright_2025</p>
+        <p>
+        &copy; 2025 - Todos los derechos reservados
+        </p>
     </footer>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <?php
 include("partials/cabecera.php");
 include("conexiondb.php");
-if(isset($_SESSION["Usuarios_id"])){
-  $Usuarios_id = $_SESSION['Usuarios_id']; // Asumiendo que user_id se almacena en la sesión al iniciar sesión
 
-}else{
-  header("Location: login.php");
-  exit();
+
+
+if (!isset($_SESSION["Usuarios_id"])) {
+    header("Location: login.php");
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -14,16 +14,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descripcion = $_POST['descripcion'];
     $fecha_creacion = $_POST['fecha_creacion'];
     $estado = $_POST['estado'];
-    $Usuarios_id = $_SESSION['Usuarios_id']; // Asumiendo que user_id se almacena en la sesión al iniciar sesión
+    $Usuarios_id = $_SESSION['Usuarios_id'];
 
-    $sql = "INSERT INTO tareas (titulo, descripcion, fecha_creacion, estado, Usuarios_id) VALUES (:titulo, :descripcion, :fecha_creacion, :estado, '$Usuarios_id')";
-    $stm=$conexion->prepare($sql);
-    $stm->bindParam(":titulo",$titulo);
-    $stm->bindParam(":descripcion",$descripcion);
-    $stm->bindParam("fecha_creacion",$fecha_creacion);
-    $stm->bindParam("estado",$estado);
-    $stm->execute();
-    header("Location: tareas.php");
+    // Usar consultas preparadas para evitar inyecciones SQL
+    $sql = "INSERT INTO tareas (titulo, descripcion, fecha_creacion, estado, Usuarios_id) 
+            VALUES (:titulo, :descripcion, :fecha_creacion, :estado, :Usuarios_id)";
+    $stmt = $conexion->prepare($sql);
+
+    $stmt->bindParam(':titulo', $titulo);
+    $stmt->bindParam(':descripcion', $descripcion);
+    $stmt->bindParam(':fecha_creacion', $fecha_creacion);
+    $stmt->bindParam(':estado', $estado, PDO::PARAM_INT);
+    $stmt->bindParam(':Usuarios_id', $Usuarios_id, PDO::PARAM_INT);
+
+    if ($stmt->execute()) {
+        header("Location: tareas.php");
+        exit();
+    }
 }
 ?>
 
@@ -38,10 +45,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="date" id="fecha_creacion" name="fecha_creacion" required>
     <label for="estado">Estado:</label>
     <select name="estado" id="estado" required>
-      <option value=1>En proceso</option>
-      <option value=0>Finalizado</option>
+      <option value="1">En proceso</option>
+      <option value="0">Finalizado</option>
     </select>
     <button type="submit">Añadir Tarea</button>
   </form>
 </section>
+
 <?php include("partials/footer.php"); ?>

@@ -1,53 +1,54 @@
-<?php include("partials/cabecera.php");
+<?php 
+include("partials/cabecera.php");
 include("conexiondb.php");
-if(isset($_SESSION["Usuarios_id"])){
-  $Usuarios_id = $_SESSION['Usuarios_id']; // Asumiendo que user_id se almacena en la sesión al iniciar sesión
 
-}else{
-  header("Location: tareas.php");
+
+
+if (!isset($_SESSION["Usuarios_id"])) {
+  header("Location: login.php");
   exit();
 }
-$sql = "SELECT * FROM tareas where Usuarios_id=".$Usuarios_id." order by tareas_id desc";
-$result = $conexion->query($sql);
+
+$Usuarios_id = $_SESSION['Usuarios_id'];
+$sql = "SELECT * FROM tareas WHERE Usuarios_id = :Usuarios_id ORDER BY tareas_id DESC";
+$stmt = $conexion->prepare($sql);
+$stmt->bindParam(':Usuarios_id', $Usuarios_id, PDO::PARAM_INT);
+$stmt->execute();
 
 ?>
+
 <section id="tareas">
   <h3>Tareas</h3>
- 
   <table>
     <thead>
       <tr>
         <th>ID</th>
-        <th>Titulo</th>
+        <th>Título</th>
         <th>Descripción</th>
-        <th>Fecha creacion</th>
+        <th>Fecha Creación</th>
         <th>Estado</th>
         <th>Operaciones</th>
       </tr>
     </thead>
     <tbody>
-      <?php
-      while ($fila = $result->fetch(PDO::FETCH_ASSOC)) {
+      <?php while ($fila = $stmt->fetch(PDO::FETCH_ASSOC)) { 
         $estado = $fila['estado'] ? "En proceso" : "Finalizado";
-        echo "<tr>";
-        echo "<td>" . $fila['tareas_id'] . "</td>";
-        echo "<td>" . $fila['titulo'] . "</td>";
-        echo "<td>" . $fila['descripcion'] . "</td>";
-        echo "<td>" . $fila['fecha_creacion'] . "</td>";
-        echo "<td>" . $estado . "</td>";
-
-
-
-        echo "<td>
-                    <a href='editar_tarea.php?tareas_id=" . $fila['tareas_id'] . "'>Editar</a> |
-                    <a href='eliminar_tarea.php?tareas_id=" . $fila['tareas_id'] . "'>Eliminar</a> | 
-                    
-                    </td>";
-        echo "</tr>";
-      }
       ?>
+        <tr>
+          <td><?php echo $fila['tareas_id']; ?></td>
+          <td><?php echo $fila['titulo']; ?></td>
+          <td><?php echo $fila['descripcion']; ?></td>
+          <td><?php echo $fila['fecha_creacion']; ?></td>
+          <td><?php echo $estado; ?></td>
+          <td>
+            <a href="editar_tareas.php?tareas_id=<?php echo $fila['tareas_id']; ?>">Editar</a> |
+            <a href="eliminar_tareas.php?tareas_id=<?php echo $fila['tareas_id']; ?>">Eliminar</a>
+          </td>
+        </tr>
+      <?php } ?>
     </tbody>
   </table>
 </section>
 <button id="añadir" type="submit"><a href="añadir_tareas.php">Añadir</a></button>
+
 <?php include("partials/footer.php"); ?>
